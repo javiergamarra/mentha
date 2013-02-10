@@ -1,5 +1,8 @@
 package com.nhpatt.mentha.activity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +16,7 @@ import com.nhpatt.mentha.R;
 public class MainActivity extends Activity implements OnClickListener {
 
 	private static final String TAG = "MENTHA";
+	private final List<String> transactions = new ArrayList<String>();
 
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
@@ -20,14 +24,14 @@ public class MainActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.main);
 
 		Button save = (Button) findViewById(R.id.save);
-
 		save.setOnClickListener(this);
-		Log.e(TAG, "Starting MainActivity...");
 	}
 
 	@Override
-	public void onClick(final View v) {
+	public void onClick(final View view) {
 		EditText editText = (EditText) findViewById(R.id.transaction);
-		Log.e(TAG, editText.getText().toString());
+		String amount = editText.getText().toString();
+		transactions.add(amount);
+		Log.e(TAG, amount);
 	}
 }

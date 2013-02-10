@@ -1,6 +1,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!-- API 14 theme customizations can go here. -->
-         <item name="android:textSize">@dimen/mediumFontSize</item>
+        <item name="android:textSize">@dimen/mediumFontSize</item>
+        <item name="android:textColor">@android:color/primary_text_light</item>
     </style>
 </resources>

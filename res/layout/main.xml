@@ -5,6 +5,9 @@
     android:orientation="vertical" >
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_world" />
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_light"
+        android:padding="@dimen/largePadding"
+        android:text="@string/hello_world"
+        android:textColor="@android:color/primary_text_light" />
 </LinearLayout>

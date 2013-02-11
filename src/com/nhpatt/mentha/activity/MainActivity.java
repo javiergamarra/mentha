@@ -3,19 +3,21 @@ package com.nhpatt.mentha.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
+import android.app.ListActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.nhpatt.mentha.R;
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends ListActivity implements OnClickListener {
 
 	private static final String TAG = "MENTHA";
+	private ArrayAdapter<String> adapter;
 	private final List<String> transactions = new ArrayList<String>();
 
 	@Override
@@ -25,6 +27,10 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		Button save = (Button) findViewById(R.id.save);
 		save.setOnClickListener(this);
+
+		adapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, transactions);
+		setListAdapter(adapter);
 	}
 
 	@Override
@@ -32,6 +38,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		EditText editText = (EditText) findViewById(R.id.transaction);
 		String amount = editText.getText().toString();
 		transactions.add(amount);
+		adapter.notifyDataSetChanged();
 		Log.e(TAG, amount);
 	}
 }

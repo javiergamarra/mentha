@@ -28,4 +28,9 @@
             android:layout_weight="7"
             android:background="@android:drawable/ic_menu_save" />
     </LinearLayout>
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
 </LinearLayout>

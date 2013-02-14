@@ -8,8 +8,9 @@ public class Transaction implements Serializable {
 	private String amount;
 	private String category;
 
-	public Transaction(final String stringExtra) {
-		amount = stringExtra;
+	public Transaction(final String amount, final String category) {
+		this.amount = amount;
+		this.category = category;
 	}
 
 	public String getAmount() {

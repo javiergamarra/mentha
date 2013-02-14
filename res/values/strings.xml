@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Mentha</string>
     <string name="transactions">Our transactions</string>
+    <string name="save">Save</string>
+    <string name="category">Category</string>
+    <string name="amount">Amount</string>
 </resources>

@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.nhpatt.mentha.R;
+import com.nhpatt.mentha.model.Transaction;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -31,13 +32,14 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(final View view) {
-		EditText editText = (EditText) findViewById(R.id.transaction);
-		String amount = editText.getText().toString();
-		transactions.add(amount);
-		Toast.makeText(this, "Adding amount: " + amount, Toast.LENGTH_SHORT)
-				.show();
+		EditText amount = (EditText) findViewById(R.id.amount);
+		EditText category = (EditText) findViewById(R.id.category);
+		Transaction transaction = new Transaction(amount.getText().toString(),
+				category.getText().toString());
+		Toast.makeText(this, "Adding amount: " + transaction.getAmount(),
+				Toast.LENGTH_SHORT).show();
 		Intent intent = new Intent(this, HistoryAmountsActivity.class);
-		intent.putExtra("amount", amount);
+		intent.putExtra("transaction", transaction);
 		startActivity(intent);
 	}
 }

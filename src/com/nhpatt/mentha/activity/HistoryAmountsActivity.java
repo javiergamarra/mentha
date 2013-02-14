@@ -19,6 +19,8 @@ public class HistoryAmountsActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.history);
 
+		transactions.add(getIntent().getStringExtra("amount"));
+
 		adapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_1, transactions);
 		setListAdapter(adapter);

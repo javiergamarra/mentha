@@ -1,8 +1,5 @@
 package com.nhpatt.mentha.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,10 +13,6 @@ import com.nhpatt.mentha.R;
 import com.nhpatt.mentha.model.Transaction;
 
 public class MainActivity extends Activity implements OnClickListener {
-
-	private static final String TAG = "MENTHA";
-
-	private final List<String> transactions = new ArrayList<String>();
 
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {

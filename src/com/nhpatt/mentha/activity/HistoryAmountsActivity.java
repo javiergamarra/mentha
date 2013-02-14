@@ -1,28 +1,28 @@
 package com.nhpatt.mentha.activity;
 
-import android.app.Activity;
-import android.content.Intent;
+import java.util.ArrayList;
+import java.util.List;
+
+import android.app.ListActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.ArrayAdapter;
 
 import com.nhpatt.mentha.R;
 
-public class HistoryAmountsActivity extends Activity implements OnClickListener {
+public class HistoryAmountsActivity extends ListActivity {
+
+	private ArrayAdapter<String> adapter;
+	private final List<String> transactions = new ArrayList<String>();
 
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.history);
 
-		Button button = (Button) findViewById(R.id.history);
-		button.setOnClickListener(this);
+		adapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, transactions);
+		setListAdapter(adapter);
+
 	}
 
-	@Override
-	public void onClick(final View arg0) {
-		Intent intent = new Intent(this, MainActivity.class);
-		startActivity(intent);
-	}
 }

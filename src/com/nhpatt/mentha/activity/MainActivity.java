@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.nhpatt.mentha.R;
 
@@ -38,6 +39,8 @@ public class MainActivity extends ListActivity implements OnClickListener {
 		EditText editText = (EditText) findViewById(R.id.transaction);
 		String amount = editText.getText().toString();
 		transactions.add(amount);
+		Toast.makeText(this, "Adding amount: " + amount, Toast.LENGTH_SHORT)
+				.show();
 		adapter.notifyDataSetChanged();
 		Log.e(TAG, amount);
 	}

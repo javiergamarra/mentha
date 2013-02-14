@@ -10,6 +10,6 @@ public class HistoryAmountsActivity extends Activity {
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+		setContentView(R.layout.history);
 	}
 }

@@ -2,6 +2,7 @@ package com.nhpatt.mentha.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -21,6 +22,10 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		Button save = (Button) findViewById(R.id.save);
 		save.setOnClickListener(this);
+		SharedPreferences.Editor editor = getSharedPreferences("preferences",
+				MODE_PRIVATE).edit();
+		editor.putString("nombre", "Ejemplo");
+		editor.commit();
 	}
 
 	@Override

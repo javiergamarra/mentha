@@ -20,25 +20,31 @@ public class MainActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-		Button save = (Button) findViewById(R.id.save);
+		final Button save = (Button) findViewById(R.id.save);
 		save.setOnClickListener(this);
-		SharedPreferences.Editor editor = getSharedPreferences("preferences",
-				MODE_PRIVATE).edit();
-		editor.putString("nombre", "Ejemplo");
+
+		saveUser();
+	}
+
+	private void saveUser() {
+		final SharedPreferences.Editor editor = getSharedPreferences(
+				Mentha.PREFERENCES, MODE_PRIVATE).edit();
+		editor.putString(Mentha.USER, "nhpatt");
 		editor.commit();
 	}
 
 	@Override
 	public void onClick(final View view) {
-		EditText amount = (EditText) findViewById(R.id.amount);
-		EditText category = (EditText) findViewById(R.id.category);
-		Transaction transaction = new Transaction(amount.getText().toString(),
-				category.getText().toString());
-		Toast.makeText(this, "Adding amount: " + transaction.getAmount(),
+		final EditText amount = (EditText) findViewById(R.id.amount);
+		final EditText category = (EditText) findViewById(R.id.category);
+		final Transaction transaction = new Transaction(amount.getText()
+				.toString(), category.getText().toString());
+		Toast.makeText(this,
+				getString(R.string.adding_amount, transaction.getAmount()),
 				Toast.LENGTH_SHORT).show();
 
-		Intent intent = new Intent(this, HistoryAmountsActivity.class);
-		intent.putExtra("transaction", transaction);
+		final Intent intent = new Intent(this, HistoryAmountsActivity.class);
+		intent.putExtra(Mentha.TRANSACTION, transaction);
 		startActivity(intent);
 	}
 }

@@ -4,4 +4,4 @@
     <string name="save">Save</string>
     <string name="category">Category</string>
     <string name="amount">Amount</string>
-</resources>
+    <string name="user_amounts">%s amounts</string>    <string name="adding_amount">Adding amount: %s</string></resources>

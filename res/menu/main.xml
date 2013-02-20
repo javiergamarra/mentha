@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/star"
+        android:icon="@android:drawable/btn_star"
+        android:showAsAction="ifRoom"
+        android:title="@string/star"/>
+    <item
+        android:id="@+id/radio"
+        android:icon="@android:drawable/btn_radio"
+        android:showAsAction="ifRoom"
+        android:title="@string/radio"/>
+</menu>

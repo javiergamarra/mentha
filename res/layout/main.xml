@@ -12,6 +12,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/amount"
         android:text="@string/amount" />
     <EditText
         android:id="@+id/amount"
@@ -21,6 +22,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/category"
         android:text="@string/category" />
     <EditText
         android:id="@+id/category"

@@ -36,6 +36,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				category.getText().toString());
 		Toast.makeText(this, "Adding amount: " + transaction.getAmount(),
 				Toast.LENGTH_SHORT).show();
+
 		Intent intent = new Intent(this, HistoryAmountsActivity.class);
 		intent.putExtra("transaction", transaction);
 		startActivity(intent);

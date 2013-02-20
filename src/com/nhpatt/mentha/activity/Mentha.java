@@ -9,8 +9,6 @@ import android.app.Application;
 
 public class Mentha extends Application {
 
-	private static final String TAG = "MENTHA";
-
 	private final List<Transaction> transactions = new ArrayList<Transaction>();
 
 	public List<Transaction> getTransactions() {

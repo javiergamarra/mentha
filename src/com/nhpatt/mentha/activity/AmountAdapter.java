@@ -29,10 +29,10 @@ public class AmountAdapter extends ArrayAdapter<Transaction> {
 		}
 
 		Transaction transaction = getItem(position);
-		TextView row1 = (TextView) convertView.findViewById(R.id.row1);
-		row1.setText(transaction.getAmount());
-		TextView row2 = (TextView) convertView.findViewById(R.id.row2);
-		row2.setText(transaction.getCategory());
+		TextView amount = (TextView) convertView.findViewById(R.id.amount);
+		amount.setText(transaction.getAmount());
+		TextView category = (TextView) convertView.findViewById(R.id.category);
+		category.setText(transaction.getCategory());
 
 		return convertView;
 	}

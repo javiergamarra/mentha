@@ -1,8 +1,5 @@
 package com.nhpatt.mentha.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.ListActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;

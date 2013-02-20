@@ -6,14 +6,19 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.nhpatt.mentha.R;
+import com.nhpatt.mentha.model.Category;
 import com.nhpatt.mentha.model.Transaction;
 
 public class MainActivity extends Activity implements OnClickListener {
+
+	private ArrayAdapter<Category> categories;
 
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
@@ -22,6 +27,14 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		final Button save = (Button) findViewById(R.id.save);
 		save.setOnClickListener(this);
+
+		final Spinner spinner = (Spinner) findViewById(R.id.category);
+		categories = new ArrayAdapter<Category>(this,
+				android.R.layout.simple_spinner_item,
+				Category.getAllCategories());
+		categories
+				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinner.setAdapter(categories);
 
 		saveUser();
 	}
@@ -36,9 +49,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	@Override
 	public void onClick(final View view) {
 		final EditText amount = (EditText) findViewById(R.id.amount);
-		final EditText category = (EditText) findViewById(R.id.category);
+		final Spinner category = (Spinner) findViewById(R.id.category);
 		final Transaction transaction = new Transaction(amount.getText()
-				.toString(), category.getText().toString());
+				.toString(), category.getSelectedItem().toString());
 		Toast.makeText(this,
 				getString(R.string.adding_amount, transaction.getAmount()),
 				Toast.LENGTH_SHORT).show();

@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -45,6 +46,21 @@ public class MainActivity extends Activity implements OnClickListener {
 	public boolean onCreateOptionsMenu(final Menu menu) {
 		final MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(final MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.star:
+			Toast.makeText(this, "Star pressed", Toast.LENGTH_SHORT).show();
+			break;
+		case R.id.radio:
+			Toast.makeText(this, "Radio pressed", Toast.LENGTH_SHORT).show();
+			break;
+		default:
+			break;
+		}
 		return true;
 	}
 

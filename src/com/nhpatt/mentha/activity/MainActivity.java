@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -37,6 +39,14 @@ public class MainActivity extends Activity implements OnClickListener {
 		spinner.setAdapter(categories);
 
 		saveUser();
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(final Menu menu) {
+		final MenuItem menuItem = menu.add(0, 0, 0, "");
+		menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+		menuItem.setIcon(android.R.drawable.btn_plus);
+		return true;
 	}
 
 	private void saveUser() {

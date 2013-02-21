@@ -1,0 +1,16 @@
+#
+# generated on 2013/02/21 01:57:04
+#
+# --table-start--
+dataClass=com.nhpatt.mentha.model.Category
+tableName=category
+# --table-fields-start--
+# --field-start--
+fieldName=name
+# --field-end--
+# --field-start--
+fieldName=amount
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################

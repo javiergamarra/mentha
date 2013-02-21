@@ -1,6 +1,5 @@
 package com.nhpatt.mentha.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,11 +14,15 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
+import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.nhpatt.mentha.R;
+import com.nhpatt.mentha.database.DatabaseHelper;
 import com.nhpatt.mentha.model.Category;
 import com.nhpatt.mentha.model.Transaction;
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends OrmLiteBaseActivity<OrmLiteSqliteOpenHelper>
+		implements OnClickListener {
 
 	private ArrayAdapter<Category> categories;
 
@@ -77,6 +80,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		final Spinner category = (Spinner) findViewById(R.id.category);
 		final Transaction transaction = new Transaction(amount.getText()
 				.toString(), category.getSelectedItem().toString());
+
+		((DatabaseHelper) getHelper()).getTransactionDAO().create(transaction);
+
 		Toast.makeText(this,
 				getString(R.string.adding_amount, transaction.getAmount()),
 				Toast.LENGTH_SHORT).show();

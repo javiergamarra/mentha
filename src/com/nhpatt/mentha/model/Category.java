@@ -2,11 +2,20 @@ package com.nhpatt.mentha.model;
 
 import java.io.Serializable;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
+@DatabaseTable
 public class Category implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	@DatabaseField
 	private String name;
+	@DatabaseField
 	private Double amount;
+
+	public Category() {
+	}
 
 	public Category(final String name) {
 		this.name = name;

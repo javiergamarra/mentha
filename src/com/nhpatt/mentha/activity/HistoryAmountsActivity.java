@@ -1,7 +1,6 @@
 package com.nhpatt.mentha.activity;
 
 import static com.nhpatt.mentha.activity.Mentha.TRANSACTION;
-import android.app.ListActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -9,12 +8,17 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.Toast;
 
+import com.j256.ormlite.android.apptools.OrmLiteBaseListActivity;
+import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.nhpatt.mentha.R;
 import com.nhpatt.mentha.adapter.AmountAdapter;
+import com.nhpatt.mentha.database.DatabaseHelper;
 import com.nhpatt.mentha.model.Transaction;
 
-public class HistoryAmountsActivity extends ListActivity {
+public class HistoryAmountsActivity extends
+		OrmLiteBaseListActivity<OrmLiteSqliteOpenHelper> {
 
 	private AmountAdapter adapter;
 
@@ -24,6 +28,12 @@ public class HistoryAmountsActivity extends ListActivity {
 		setContentView(R.layout.history);
 
 		recoverUser();
+
+		Toast.makeText(
+				this,
+				"Saved: "
+						+ ((DatabaseHelper) getHelper()).getTransactionDAO()
+								.countOf(), Toast.LENGTH_SHORT).show();
 
 		final Mentha mentha = (Mentha) getApplication();
 		mentha.getTransactions().add(

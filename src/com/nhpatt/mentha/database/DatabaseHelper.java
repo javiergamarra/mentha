@@ -16,7 +16,7 @@ import com.nhpatt.mentha.model.Transaction;
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
 	private static final String DATABASE_NAME = "helloAndroid.db";
-	private static final int DATABASE_VERSION = 2;
+	private static final int DATABASE_VERSION = 3;
 
 	private RuntimeExceptionDao<Transaction, Integer> transactionDAO = null;
 

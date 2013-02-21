@@ -9,6 +9,9 @@ import com.j256.ormlite.table.DatabaseTable;
 public class Transaction implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
+	@DatabaseField(generatedId = true)
+	private Long id;
 	@DatabaseField
 	private String amount;
 	@DatabaseField
@@ -36,6 +39,14 @@ public class Transaction implements Serializable {
 
 	public void setCategory(final String category) {
 		this.category = category;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(final Long id) {
+		this.id = id;
 	}
 
 }

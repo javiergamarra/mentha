@@ -1,6 +1,7 @@
 package com.nhpatt.mentha.activity;
 
-import static com.nhpatt.mentha.activity.Mentha.TRANSACTION;
+import java.util.List;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -8,7 +9,6 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
-import android.widget.Toast;
 
 import com.j256.ormlite.android.apptools.OrmLiteBaseListActivity;
 import com.nhpatt.mentha.R;
@@ -20,6 +20,7 @@ public class HistoryAmountsActivity extends
 		OrmLiteBaseListActivity<DatabaseHelper> {
 
 	private AmountAdapter adapter;
+	private List<Transaction> transactions;
 
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
@@ -28,16 +29,9 @@ public class HistoryAmountsActivity extends
 
 		recoverUser();
 
-		Toast.makeText(this,
-				"Saved: " + (getHelper()).getTransactionDAO().countOf(),
-				Toast.LENGTH_SHORT).show();
-
-		final Mentha mentha = (Mentha) getApplication();
-		mentha.getTransactions().add(
-				(Transaction) getIntent().getSerializableExtra(TRANSACTION));
-
+		transactions = getHelper().getTransactionDAO().queryForAll();
 		adapter = new AmountAdapter(this, android.R.layout.simple_list_item_1,
-				mentha.getTransactions());
+				transactions);
 		setListAdapter(adapter);
 
 		registerForContextMenu(getListView());
@@ -54,8 +48,9 @@ public class HistoryAmountsActivity extends
 	public boolean onContextItemSelected(final MenuItem item) {
 		final AdapterContextMenuInfo info = (AdapterContextMenuInfo) item
 				.getMenuInfo();
-		final Mentha mentha = (Mentha) getApplication();
-		mentha.getTransactions().remove(info.position);
+		final Transaction transaction = transactions.get(info.position);
+		getHelper().getTransactionDAO().delete(transaction);
+		transactions.remove(transaction);
 		adapter.notifyDataSetChanged();
 		return true;
 	}

@@ -55,7 +55,7 @@ public class MainActivity extends OrmLiteBaseActivity<DatabaseHelper> implements
 	public boolean onOptionsItemSelected(final MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.star:
-			Toast.makeText(this, "Star pressed", Toast.LENGTH_SHORT).show();
+			startActivity(new Intent(this, HistoryAmountsActivity.class));
 			break;
 		case R.id.radio:
 			startActivity(new Intent(this, SettingsActivity.class));
@@ -80,14 +80,12 @@ public class MainActivity extends OrmLiteBaseActivity<DatabaseHelper> implements
 		final Transaction transaction = new Transaction(amount.getText()
 				.toString(), category.getSelectedItem().toString());
 
-		(getHelper()).getTransactionDAO().create(transaction);
+		getHelper().getTransactionDAO().create(transaction);
 
 		Toast.makeText(this,
 				getString(R.string.adding_amount, transaction.getAmount()),
 				Toast.LENGTH_SHORT).show();
 
-		final Intent intent = new Intent(this, HistoryAmountsActivity.class);
-		intent.putExtra(Mentha.TRANSACTION, transaction);
-		startActivity(intent);
+		startActivity(new Intent(this, HistoryAmountsActivity.class));
 	}
 }

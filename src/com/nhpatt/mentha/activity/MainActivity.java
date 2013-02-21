@@ -56,7 +56,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			Toast.makeText(this, "Star pressed", Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.radio:
-			Toast.makeText(this, "Radio pressed", Toast.LENGTH_SHORT).show();
+			startActivity(new Intent(this, SettingsActivity.class));
 			break;
 		default:
 			break;

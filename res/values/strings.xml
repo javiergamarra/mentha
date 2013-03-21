@@ -1,7 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Mentha</string>
     <string name="transactions">Our transactions</string>
     <string name="save">Save</string>
     <string name="category">Category</string>
     <string name="amount">Amount</string>
-    <string name="user_amounts">%s amounts</string>    <string name="adding_amount">Adding amount: %s</string>    <string name="star">star</string>    <string name="radio">radio</string></resources>
+    <string name="user_amounts">%s amounts</string>
+    <string name="adding_amount">Adding amount: %s</string>
+    <string name="star">star</string>
+    <string name="radio">radio</string>
+    <string name="datos_personales">Datos Personales</string>
+    <string name="nombre">Nombre</string>
+    <string name="_nombre">*Nombre</string>
+    <string name="_apellidos">*Apellidos</string>
+    <string name="domicilio">Domicilio</string>
+    <string name="tipo_v_a">Tipo Vía</string>
+    <string name="via">Via</string>
+    <string name="_num">*Num</string>
+    <string name="escalera">Escalera</string>
+    <string name="piso">Piso</string>
+    <string name="puerta">Puerta</string>
+    <string name="guardar">Guardar</string>
+    <string name="title_item_list">Items</string>
+    <string name="title_item_detail">Item Detail</string>
+</resources>

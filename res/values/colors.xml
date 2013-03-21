@@ -4,4 +4,8 @@
     <color name="orange">#FF9666</color>
     <color name="ocean">#207178</color>
     <color name="darkOcean">#174C4F</color>
+    <color name="backgroundMenuSelected">#eaeaea</color>
+    <color name="textoTitle">#47444b</color>
+    <color name="backgroundTitle">#dddddd</color>
+    <color name="botonVerde">#b3c52c</color>
 </resources>

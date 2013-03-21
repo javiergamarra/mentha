@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/pantalla"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <TextView
+        android:id="@+id/titulo"
+        style="@style/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/datos_personales" />
+    <TextView
+        android:id="@+id/subtitulo"
+        style="@style/subtitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titulo"
+        android:text="@string/nombre" />
+    <LinearLayout
+        android:id="@+id/subtituloCampos"
+        style="@style/campos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subtitulo"
+        android:orientation="vertical" >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/_nombre" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/_apellidos" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/domicilio"
+        style="@style/subtitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subtituloCampos"
+        android:text="@string/domicilio" />
+    <RelativeLayout android:id="@+id/camposDomicilio"
+        style="@style/campos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/domicilio" >
+        <EditText
+            android:id="@+id/tipoVia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/tipo_v_a" />
+        <EditText android:id="@+id/via"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tipoVia"
+            android:hint="@string/via" />
+         <EditText android:layout_below="@id/via"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/_num" />
+        <EditText  android:layout_toRightOf="@id/via"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/escalera" />
+        <EditText android:layout_toRightOf="@id/via"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/piso" />
+        <EditText android:layout_toRightOf="@id/via"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/puerta" />
+    </RelativeLayout>
+    <LinearLayout android:layout_below="@id/camposDomicilio"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+       
+        <Button
+            style="@style/boton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/guardar" />
+    </LinearLayout>
+</RelativeLayout>

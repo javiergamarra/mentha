@@ -23,8 +23,6 @@ import com.nhpatt.mentha.model.Transaction;
 public class MainActivity extends OrmLiteBaseActivity<DatabaseHelper> implements
 		OnClickListener {
 
-	private ArrayAdapter<Category> categories;
-
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -34,8 +32,8 @@ public class MainActivity extends OrmLiteBaseActivity<DatabaseHelper> implements
 		save.setOnClickListener(this);
 
 		final Spinner spinner = (Spinner) findViewById(R.id.category);
-		categories = new ArrayAdapter<Category>(this,
-				android.R.layout.simple_spinner_item,
+		final ArrayAdapter<Category> categories = new ArrayAdapter<Category>(
+				this, android.R.layout.simple_spinner_item,
 				Category.getAllCategories());
 		categories
 				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -73,7 +71,6 @@ public class MainActivity extends OrmLiteBaseActivity<DatabaseHelper> implements
 		editor.commit();
 	}
 
-	@Override
 	public void onClick(final View view) {
 		final EditText amount = (EditText) findViewById(R.id.amount);
 		final Spinner category = (Spinner) findViewById(R.id.category);

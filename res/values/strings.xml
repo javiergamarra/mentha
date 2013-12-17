@@ -21,6 +21,4 @@
     <string name="piso">Piso</string>
     <string name="puerta">Puerta</string>
     <string name="guardar">Guardar</string>
-    <string name="title_item_list">Items</string>
-    <string name="title_item_detail">Item Detail</string>
 </resources>

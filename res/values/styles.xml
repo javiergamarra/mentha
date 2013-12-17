@@ -1,17 +1,20 @@
 <resources>
+
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
-    <style name="AppBaseTheme" parent="android:Theme.Light">        <!--
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
+            backward-compatibility can go here.
         -->
     </style>
     <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    <style name="AppTheme" parent="AppBaseTheme"> <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+
     <style name="titulo" parent="android:Widget.Holo.Light.TextView">
         <item name="android:drawableBottom">@drawable/separador</item>
         <item name="android:drawablePadding">10dip</item>
@@ -20,10 +23,12 @@
         <item name="android:textColor">@color/textoTitle</item>
         <item name="android:textSize">20sp</item>
     </style>
+
     <style name="pantalla">
         <item name="android:background">@color/backgroundMenuSelected</item>
         <item name="android:padding">20dip</item>
     </style>
+
     <style name="subtitulo" parent="android:Widget.Holo.Light.TextView">
         <item name="android:background">@color/backgroundTitle</item>
         <item name="android:layout_marginTop">15dip</item>
@@ -31,10 +36,12 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+
     <style name="campos">
         <item name="android:background">@android:color/white</item>
         <item name="android:padding">10dip</item>
     </style>
+
     <style name="boton" parent="android:Widget.Holo.Light.Button">
         <item name="android:background">@color/botonVerde</item>
         <item name="android:drawableLeft">@drawable/boton_guardar</item>
@@ -43,4 +50,5 @@
         <item name="android:padding">10dip</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
+
 </resources>

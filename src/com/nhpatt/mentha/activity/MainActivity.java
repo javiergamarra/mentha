@@ -1,11 +1,7 @@
 package com.nhpatt.mentha.activity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -39,36 +35,6 @@ public class MainActivity extends OrmLiteBaseActivity<DatabaseHelper> implements
 				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(categories);
 
-		saveUser();
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(final Menu menu) {
-		final MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.main, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(final MenuItem item) {
-		switch (item.getItemId()) {
-		case R.id.star:
-			startActivity(new Intent(this, HistoryAmountsActivity.class));
-			break;
-		case R.id.radio:
-			startActivity(new Intent(this, SettingsActivity.class));
-			break;
-		default:
-			break;
-		}
-		return true;
-	}
-
-	private void saveUser() {
-		final SharedPreferences.Editor editor = getSharedPreferences(
-				Mentha.PREFERENCES, MODE_PRIVATE).edit();
-		editor.putString(Mentha.USER, "nhpatt");
-		editor.commit();
 	}
 
 	public void onClick(final View view) {

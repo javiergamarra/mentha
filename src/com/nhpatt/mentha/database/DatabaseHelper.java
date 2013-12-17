@@ -32,7 +32,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 			TableUtils.createTable(connectionSource, Transaction.class);
 		} catch (final SQLException e) {
 			Log.e(DatabaseHelper.class.getName(), "Can't create database", e);
-			throw new RuntimeException(e);
 		}
 	}
 
@@ -45,7 +44,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 			onCreate(db, connectionSource);
 		} catch (final java.sql.SQLException e) {
 			Log.e(DatabaseHelper.class.getName(), "Can't drop databases", e);
-			throw new RuntimeException(e);
 		}
 	}
 

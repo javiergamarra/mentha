@@ -27,13 +27,14 @@ public class MainActivity extends OrmLiteBaseActivity<DatabaseHelper> implements
 		final Button save = (Button) findViewById(R.id.save);
 		save.setOnClickListener(this);
 
-		final Spinner spinner = (Spinner) findViewById(R.id.category);
+	/*	final Spinner spinner = (Spinner) findViewById(R.id.category);
 		final ArrayAdapter<Category> categories = new ArrayAdapter<Category>(
 				this, android.R.layout.simple_spinner_item,
 				Category.getAllCategories());
 		categories
 				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(categories);
+		*/
 
 	}
 

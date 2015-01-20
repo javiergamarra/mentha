@@ -27,8 +27,6 @@ public class HistoryAmountsActivity extends
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.history);
 
-		recoverUser();
-
 		transactions = getHelper().getTransactionDAO().queryForAll();
 		adapter = new AmountAdapter(this, android.R.layout.simple_list_item_1,
 				transactions);
@@ -53,13 +51,6 @@ public class HistoryAmountsActivity extends
 		transactions.remove(transaction);
 		adapter.notifyDataSetChanged();
 		return true;
-	}
-
-	private void recoverUser() {
-		final SharedPreferences preferences = getSharedPreferences(
-				Mentha.PREFERENCES, MODE_PRIVATE);
-		setTitle(getString(R.string.user_amounts,
-				preferences.getString(Mentha.USER, "-")));
 	}
 
 }

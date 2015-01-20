@@ -41,9 +41,4 @@ public class Category implements Serializable {
 	public String toString() {
 		return name;
 	}
-
-	public static Category[] getAllCategories() {
-		return new Category[] { new Category("food"), new Category("gifts"),
-				new Category("trips") };
-	}
 }

@@ -18,3 +18,8 @@ local.properties
 # Eclipse project files
 .classpath
 .project
+
+mentha.iml
+.idea/
+.idea/dictionaries/nhpatt.xml
+.idea/libraries/libs.xml
